@@ -90,7 +90,7 @@ module Transitions
     end
 
     def event(name, options = {}, &block)
-      (@events[name] ||= Event.new(self, name)).update(options, &block)
+      (@events[name] ||= TransitionEvent.new(self, name)).update(options, &block)
     end
 
     def event_fired_callback

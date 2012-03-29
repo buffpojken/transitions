@@ -8,14 +8,14 @@ class TestEvent < Test::Unit::TestCase
   end
 
   def event_with_symbol_success_callback
-    @event = Transitions::Event.new(nil, @state_name, {:success => @success_as_symbol}) do
+    @event = Transitions::TransitionEvent.new(nil, @state_name, {:success => @success_as_symbol}) do
       transitions :to => :closed, :from => [:open, :received]
     end
   end
   alias_method :new_event, :event_with_symbol_success_callback
 
   def event_with_lambda_success_callback
-    @event = Transitions::Event.new(nil, @state_name, {:success => @success_as_lambda}) do
+    @event = Transitions::TransitionEvent.new(nil, @state_name, {:success => @success_as_lambda}) do
       transitions :to => :closed, :from => [:open, :received]
     end
   end

@@ -2,7 +2,7 @@ require "helper"
 
 class TestEventBeingFired < Test::Unit::TestCase
   test "should raise an Transitions::InvalidTransition error if the transitions are empty" do
-    event = Transitions::Event.new(nil, :event)
+    event = Transitions::TransitionEvent.new(nil, :event)
 
     assert_raise Transitions::InvalidTransition do
       event.fire(nil)
@@ -10,7 +10,7 @@ class TestEventBeingFired < Test::Unit::TestCase
   end
 
   test "should return the state of the first matching transition it finds" do
-    event = Transitions::Event.new(nil, :event) do
+    event = Transitions::TransitionEvent.new(nil, :event) do
       transitions :to => :closed, :from => [:open, :received]
     end
 

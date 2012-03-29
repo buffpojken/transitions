@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 module Transitions
-  class Event
+  class TransitionEvent
     attr_reader :name, :success, :timestamp
 
     def initialize(machine, name, options = {}, &block)

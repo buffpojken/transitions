@@ -20,7 +20,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require "transitions/event"
+require "transitions/transition_event"
 require "transitions/machine"
 require "transitions/state"
 require "transitions/state_transition"
